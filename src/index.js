@@ -67,7 +67,7 @@ contact.children[1].textContent = siteContent.contact['address'];
 contact.children[2].textContent = siteContent.contact['phone']; 
 contact.children[3].textContent = siteContent.contact['email']; 
 
-//TOP CONTENT 
+//TOP CONTENT of Main content section 
 const topContent = document.querySelector('.top-content'); 
 topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4'];
 topContent.children[0].children[1].textContent = siteContent['main-content']['features-content'];
@@ -75,7 +75,7 @@ topContent.children[1].children[0].textContent = siteContent['main-content']['ab
 topContent.children[1].children[1].textContent = siteContent['main-content']['about-content'];
 
 
-// BOTTOM CONTENT
+// BOTTOM CONTENT of main content section 
 const bottomContent = document.querySelector('.bottom-content'); 
 console.log(bottomContent); 
 bottomContent.children[0].children[0].textContent = siteContent['main-content']['services-h4']; 
@@ -84,3 +84,23 @@ bottomContent.children[1].children[0].textContent = siteContent['main-content'][
 bottomContent.children[1].children[1].textContent = siteContent['main-content']['product-content']; 
 bottomContent.children[2].children[0].textContent = siteContent['main-content']['vision-h4']; 
 bottomContent.children[2].children[1].textContent = siteContent['main-content']['vision-content']; 
+
+
+//CTA SECTION 
+
+const ctaH1 = document.querySelector('.cta h1'); 
+ctaH1.textContent = siteContent.cta.h1; 
+const ctaButton = document.querySelector('.cta button'); 
+ctaButton.textContent = siteContent.cta.button; 
+
+
+//NAV LINKS
+const navLinks = document.querySelectorAll(' header nav a'); 
+// console.log(navLinks);
+const navLinkTexts = Object.values(siteContent.nav); 
+
+navLinks.forEach((link, index) => {
+  link.textContent = navLinkTexts[index]; 
+  link.classList.add('italic');
+}); 
+
